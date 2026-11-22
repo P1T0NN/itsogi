@@ -1,0 +1,302 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"Company": {
+		"nickname": "Rey del 1v1",
+		"role": "Jugador de fútbol 1v1",
+		"football": "Fútbol",
+		"oneOnOneFootball": "Fútbol 1v1"
+	},
+	"Events": {
+		"ogiAndKevin": "Ogi y Kevin"
+	},
+	"Ui": {
+		"carousel": "carrusel",
+		"slide": "diapositiva",
+		"nextSlide": "Siguiente diapositiva",
+		"previousSlide": "Diapositiva anterior",
+		"close": "Cerrar",
+		"next": "Siguiente",
+		"previous": "Anterior",
+		"pagination": "Paginación",
+		"nextPage": "Ir a la página siguiente",
+		"previousPage": "Ir a la página anterior",
+		"morePages": "Más páginas",
+		"loading": "Cargando",
+		"loadingMore": "Cargando...",
+		"loadMore": "Cargar más",
+		"retry": "Reintentar",
+		"tryAgain": "Volver a intentarlo",
+		"loadError": "No se han podido cargar los datos.",
+		"endOfList": "Has llegado al final.",
+		"loadingItems": "Cargando elementos...",
+		"emptyTitle": "Todavía no hay elementos",
+		"emptyDescription": "No hay elementos que mostrar.",
+		"itemsError": "No se han podido cargar los elementos. Inténtalo más tarde.",
+		"millionViews": "1 M+"
+	},
+	"Errors": {
+		"unexpected": "Algo ha fallado",
+		"unexpectedWithRetry": "Algo ha fallado. Vuelve a intentarlo.",
+		"rateLimit": "Demasiadas solicitudes. Inténtalo más tarde.",
+		"retryIn": [
+			{
+				"declarations": ["input seconds", "local secondsPlural = seconds: plural"],
+				"selectors": ["secondsPlural"],
+				"match": {
+					"secondsPlural=one": "Demasiadas solicitudes. Vuelve a intentarlo en {seconds} segundo.",
+					"secondsPlural=*": "Demasiadas solicitudes. Vuelve a intentarlo en {seconds} segundos."
+				}
+			}
+		],
+		"notFound": "Página no encontrada",
+		"methodNotAllowed": "Método no permitido",
+		"requestTooLarge": "La solicitud es demasiado grande"
+	},
+	"Turnstile": {
+		"required": "Completa la verificación y vuelve a intentarlo.",
+		"loading": "Cargando la verificación...",
+		"unavailable": "La verificación no está disponible. Inténtalo más tarde.",
+		"temporarilyUnavailable": "La verificación no está disponible en este momento.",
+		"complete": "Verificación completada.",
+		"failed": "La verificación ha fallado. Vuelve a intentarlo.",
+		"expired": "La verificación ha caducado. Vuelve a intentarlo.",
+		"timedOut": "Se ha agotado el tiempo de verificación. Vuelve a intentarlo.",
+		"ready": "Completa la verificación para enviar el formulario.",
+		"loadFailed": "No se ha podido cargar la verificación. Vuelve a intentarlo.",
+		"retry": "Reintentar la verificación",
+		"enableJavaScript": "Activa JavaScript para completar la verificación y enviar el formulario."
+	},
+	"Validation": {
+		"correctForm": "Corrige los errores del formulario antes de enviarlo.",
+		"required": "Rellena este campo.",
+		"text": "Introduce texto en este campo.",
+		"number": "Introduce un número válido.",
+		"integer": "Introduce un número entero.",
+		"value": "Introduce un valor válido.",
+		"range": "Introduce un valor dentro del intervalo permitido.",
+		"email": "Introduce una dirección de correo válida.",
+		"url": "Introduce una URL válida.",
+		"identifier": "Introduce un identificador válido.",
+		"date": "Introduce una fecha válida.",
+		"datetime": "Introduce una fecha y una hora válidas.",
+		"time": "Introduce una hora válida.",
+		"format": "Usa el formato requerido para este campo.",
+		"option": "Elige una opción válida.",
+		"multiple": "Introduce un múltiplo de {divisor}.",
+		"unexpectedFields": "Elimina los campos que sobran.",
+		"characterLimit": [
+			{
+				"declarations": ["input limit", "input comparison", "local limitPlural = limit: plural"],
+				"selectors": ["comparison", "limitPlural"],
+				"match": {
+					"comparison=min, limitPlural=one": "Introduce al menos {limit} carácter.",
+					"comparison=min, limitPlural=*": "Introduce al menos {limit} caracteres.",
+					"comparison=max, limitPlural=one": "Introduce como máximo {limit} carácter.",
+					"comparison=max, limitPlural=*": "Introduce como máximo {limit} caracteres.",
+					"comparison=exact, limitPlural=one": "Introduce exactamente {limit} carácter.",
+					"comparison=exact, limitPlural=*": "Introduce exactamente {limit} caracteres.",
+					"comparison=*, limitPlural=one": "Introduce exactamente {limit}.",
+					"comparison=*, limitPlural=*": "Introduce exactamente {limit}."
+				}
+			}
+		],
+		"itemLimit": [
+			{
+				"declarations": ["input limit", "input comparison", "local limitPlural = limit: plural"],
+				"selectors": ["comparison", "limitPlural"],
+				"match": {
+					"comparison=min, limitPlural=one": "Incluye al menos {limit} elemento.",
+					"comparison=min, limitPlural=*": "Incluye al menos {limit} elementos.",
+					"comparison=max, limitPlural=one": "Incluye como máximo {limit} elemento.",
+					"comparison=max, limitPlural=*": "Incluye como máximo {limit} elementos.",
+					"comparison=exact, limitPlural=one": "Incluye exactamente {limit} elemento.",
+					"comparison=exact, limitPlural=*": "Incluye exactamente {limit} elementos.",
+					"comparison=*, limitPlural=one": "Introduce exactamente {limit}.",
+					"comparison=*, limitPlural=*": "Introduce exactamente {limit}."
+				}
+			}
+		],
+		"fileLimit": [
+			{
+				"declarations": ["input limit", "input comparison", "local limitPlural = limit: plural"],
+				"selectors": ["comparison", "limitPlural"],
+				"match": {
+					"comparison=min, limitPlural=one": "Elige un archivo con al menos {limit} byte.",
+					"comparison=min, limitPlural=*": "Elige un archivo con al menos {limit} bytes.",
+					"comparison=max, limitPlural=one": "Elige un archivo con como máximo {limit} byte.",
+					"comparison=max, limitPlural=*": "Elige un archivo con como máximo {limit} bytes.",
+					"comparison=exact, limitPlural=one": "Elige un archivo con exactamente {limit} byte.",
+					"comparison=exact, limitPlural=*": "Elige un archivo con exactamente {limit} bytes.",
+					"comparison=*, limitPlural=one": "Introduce exactamente {limit}.",
+					"comparison=*, limitPlural=*": "Introduce exactamente {limit}."
+				}
+			}
+		],
+		"numberLimit": [
+			{
+				"declarations": ["input limit", "input comparison"],
+				"selectors": ["comparison"],
+				"match": {
+					"comparison=exact": "Introduce exactamente {limit}.",
+					"comparison=min": "Introduce un número mayor o igual que {limit}.",
+					"comparison=max": "Introduce un número menor o igual que {limit}.",
+					"comparison=greater": "Introduce un número mayor que {limit}.",
+					"comparison=less": "Introduce un número menor que {limit}.",
+					"comparison=*": "Introduce un número válido."
+				}
+			}
+		]
+	},
+	"Header": {
+		"mainNavigation": "Navegación principal",
+		"streak": "Racha",
+		"events": "Eventos",
+		"videos": "Vídeos",
+		"play": "Juega",
+		"collabs": "Colaboraciones",
+		"menu": "Menú",
+		"openMenu": "Abrir menú",
+		"closeMenu": "Cerrar menú",
+		"follow": "Sígueme"
+	},
+	"LanguageSwitcher": {
+		"label": "Idioma",
+		"menuLabel": "Cambiar idioma. Idioma actual: {language}"
+	},
+	"Footer": {
+		"copyright": "© {name}. La racha se actualiza después de cada partido."
+	},
+	"Winstreak": {
+		"carouselLabel": "{count} victorias, de cinco en cinco"
+	},
+	"EventCountdown": {
+		"liveNow": "Ya estamos jugando.\nVen a jugar.",
+		"timerLabel": "Tiempo hasta el próximo evento",
+		"nextEventIn": "Próximo evento en",
+		"days": "Días",
+		"hours": "H",
+		"minutes": "Min",
+		"seconds": "S"
+	},
+	"HomePage": {
+		"SEO": {
+			"title": "Ogi · Rey del 1v1 | Jugador de fútbol 1v1",
+			"description": "Soy Ogi, el rey del 1v1. Juego al fútbol 1v1 contra quien sea, donde sea y cuando sea: en la calle, en césped artificial o natural. Encuéntrame en mis historias o en mi próximo evento.",
+			"eventName": "Fútbol 1v1 contra Ogi en {place}",
+			"eventDescription": "Entrada gratis. Juega un 1v1 contra Ogi. El primero en marcar 3 goles gana.",
+			"eventDescriptionWithPrize": "Entrada gratis. Juega un 1v1 contra Ogi. El primero en marcar 3 goles gana. Gana a {rivals} y llévate {prize}."
+		},
+		"HomeHeroSection": {
+			"photoAlt": "Ogi de noche, con el balón en las manos",
+			"titleStart": "Rey del",
+			"titleHighlight": "1V1",
+			"nextEvent": "Próximo evento",
+			"seeStreak": "Ver la racha"
+		},
+		"HomeMarqueeSection": {
+			"sponsorsPlaceholder": "Aquí irán los patrocinadores"
+		},
+		"HomeWinstreakSection": {
+			"winsInARow": "Victorias seguidas",
+			"highestEver": "Récord histórico",
+			"description": "Cada 5 victorias seguidas sumo {bump} al bote. Gáname en un partido a 3 goles y te llevas todo el bote. Actualizo la racha después de cada partido, solo aquí.",
+			"prizeToWinner": "para quien rompa la racha",
+			"potStart": "El bote",
+			"potStartsAt": "arranca con 5 victorias",
+			"nextBump": [
+				{
+					"declarations": ["input count", "input prize", "local countPlural = count: plural"],
+					"selectors": ["countPlural"],
+					"match": {
+						"countPlural=one": "Falta {count} victoria para que el bote suba a {prize}.",
+						"countPlural=*": "Faltan {count} victorias para que el bote suba a {prize}."
+					}
+				}
+			],
+			"howToPlay": "Cómo retarme"
+		},
+		"HomeNextEventSection": {
+			"today": "Hoy",
+			"tomorrow": "Mañana",
+			"time": "{clock} h"
+		},
+		"HomeNextEventSectionContent": {
+			"label": "Próximo evento",
+			"previousLabel": "Evento anterior"
+		},
+		"HomeNextEventSectionInformation": {
+			"srLabel": "Próximo evento:",
+			"srPreviousLabel": "Evento anterior:",
+			"ifYouBeatMe": "Si consigues\nganarme",
+			"ifYouBeat": "Si ganas\na {rivals}",
+			"getDirections": "Cómo llegar"
+		},
+		"HomeNextEventSectionCountdown": {
+			"posterAlt": "Cartel del evento del {day} en {place}",
+			"ended": "Ya terminó.\nNos vemos en el próximo."
+		},
+		"HomeNextEventSectionUpcoming": {
+			"title": "Más eventos",
+			"prizeIfYouBeatMe": "{prize} si me ganas",
+			"prizeIfYouBeat": "{prize} si ganas a {rivals}",
+			"directions": "Cómo llegar"
+		},
+		"HomeNextEventSectionEmpty": {
+			"title": "No hay eventos programados",
+			"description": "Cuando salgo a jugar, cuento dónde estoy en mis historias. Sígueme, ven a buscarme y rétame a un 1v1.",
+			"followOn": "Sígueme en {platform}"
+		},
+		"HomeReelSection": {
+			"title": "Vídeos",
+			"description": "Míralos en TikTok, Instagram o YouTube."
+		},
+		"HomeReelSectionCarousel": {
+			"label": "Vídeos destacados"
+		},
+		"HomeReelSectionItem": {
+			"label": "Vídeo de Ogi",
+			"watchOn": "Ver en {platform}",
+			"showVideo": "Mostrar este vídeo"
+		},
+		"HomeReelSectionCarouselControls": {
+			"previous": "Vídeo anterior",
+			"next": "Siguiente vídeo",
+			"videoNumber": "Vídeo {number}"
+		},
+		"HomeClosingSection": {
+			"title": "Cómo jugar contra mí",
+			"description": "Juego 1v1 contra quien sea, donde sea y cuando sea: en la calle, en césped artificial o natural. Cuando salgo a jugar, cuento dónde estoy en mis historias. Sígueme para encontrarme o mira arriba cuándo es mi próximo evento.",
+			"ruleStart": "El primero en marcar",
+			"ruleHighlight": "3 goles",
+			"ruleEnd": "gana.",
+			"followOn": "Sígueme en {platform}",
+			"new": "Nuevo"
+		},
+		"HomeContactSectionLeftContent": {
+			"title": "Colabora conmigo",
+			"description": "Colaboraciones con marcas, 1v1 patrocinados y apariciones en eventos. Mis vídeos tienen una media de 500.000 visualizaciones. Mándame un mensaje o escríbeme directamente por correo."
+		},
+		"HomeContactSectionRightContent": {
+			"title": "Pásame tu idea"
+		},
+		"HomeContactForm": {
+			"nameLabel": "Nombre",
+			"namePlaceholder": "Tu nombre o el de tu marca",
+			"emailLabel": "Correo electrónico",
+			"emailPlaceholder": "tu@marca.com",
+			"messageLabel": "Mensaje",
+			"messageDescription": "Marca, idea, fechas, presupuesto: todo lo que ayude.",
+			"messagePlaceholder": "Hola, Ogi. Nos encantaría colaborar contigo en...",
+			"sending": "Enviando",
+			"send": "Enviar mensaje",
+			"sent": "Mensaje enviado. Te contesto pronto."
+		}
+	},
+	"ErrorPage": {
+		"notFoundTitle": "Página no encontrada",
+		"notFoundDescription": "La página que buscas no existe o se ha movido.",
+		"errorTitle": "Algo ha fallado",
+		"errorDescription": "Se ha producido un error inesperado. Vuelve a intentarlo o regresa a la página de inicio.",
+		"backHome": "Volver al inicio"
+	}
+}

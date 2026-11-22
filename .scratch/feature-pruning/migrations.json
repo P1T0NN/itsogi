@@ -1,0 +1,14 @@
+{
+  "src\\server\\database\\migrations\\0001_firstRequestRateLimitWindows.sql": "fd06fe7be43c8465bbf45727c0b1c11a62f980f7b9a9c0d377e2c23b3c578b3d",
+  "src\\server\\database\\migrations\\0002_todoPaginationIndex.sql": "23e55e17bce88ef4b0572bddbefb6e5d8ce68ebe2420f27234828740268808ee",
+  "src\\server\\database\\migrations\\0003_observations.sql": "f4f3bccd2db696eb102c8da17135d78099e0a7cbd789caedffab48f0bacf1f1b",
+  "src\\server\\database\\migrations\\0004_removeObservations.sql": "e86e5cd254ddf8d8213c3f6621d680baa4d2304cb783185895139c8786b1a187",
+  "src\\server\\database\\migrations\\0005_observationSpans.sql": "4e0285ea591e8e70832bffb676e16d32fcaef94cc1126ce1cb4dfb61373b8399",
+  "src\\server\\database\\migrations\\0006_observationQueryDetails.sql": "0b9533b65a41446b4c0f920b82a0b3bd8e2a428a5ffc1dd740e5d81097eb5a20",
+  "src\\server\\database\\migrations\\0007_observationQueryNames.sql": "a3060e20035a192611803e07126f7ffd85e3b503bbb6f7a1d1cc445d99f11c10",
+  "src\\server\\database\\migrations\\0008_auditLogs.sql": "ea9b7159d7736a233772407fb857ed470f8b9c2e7a617b75e6d8b693871dd13b",
+  "src\\server\\database\\migrations\\0009_guestAccountLinks.sql": "2d5e3a814e2ee40921b9836e9c93fa4d79a479b61f668efb4376fed0a6080d6e",
+  "src\\server\\database\\migrations\\0010_authRateLimit.sql": "66e2b8f0031527dd9e60e75c22052b8b7817f957770953d0fac5fb889ba34e3e",
+  "src\\server\\database\\migrations\\0011_monitoring.sql": "e55248a50d2c28638147e47cd9f0a58afebc28817d4f9487d546f8a143c8c2bd",
+  "src\\server\\database\\migrations\\0012_monitoringNeutralOutcomes.sql": "345fb61c796a9a4dec58d3829523f5b69a04d7f341a1ccde55678743b7976243"
+}

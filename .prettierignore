@@ -1,0 +1,29 @@
+# Package Managers
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+bun.lock
+bun.lockb
+
+# Miscellaneous
+/static/
+
+# Agent tooling
+.agent/
+.agents/
+.claude/
+.codex/
+.codex-rate-limit-pg/
+.continue/
+.cursor/
+.gemini/
+.opencode/
+.pi/
+.roo/
+.windsurf/
+
+# Tooling artifacts
+.tmp-auth-schema/
+
+# Vendored lint plugin
+tools/oxlint/anti-slop/

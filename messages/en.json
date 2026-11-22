@@ -1,0 +1,302 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"Company": {
+		"nickname": "King of 1v1",
+		"role": "1v1 football player",
+		"football": "Football",
+		"oneOnOneFootball": "1v1 football"
+	},
+	"Events": {
+		"ogiAndKevin": "Ogi and Kevin"
+	},
+	"Ui": {
+		"carousel": "carousel",
+		"slide": "slide",
+		"nextSlide": "Next slide",
+		"previousSlide": "Previous slide",
+		"close": "Close",
+		"next": "Next",
+		"previous": "Previous",
+		"pagination": "pagination",
+		"nextPage": "Go to next page",
+		"previousPage": "Go to previous page",
+		"morePages": "More pages",
+		"loading": "Loading",
+		"loadingMore": "Loading...",
+		"loadMore": "Load more",
+		"retry": "Retry",
+		"tryAgain": "Try again",
+		"loadError": "Could not load data.",
+		"endOfList": "You have reached the end.",
+		"loadingItems": "Loading items...",
+		"emptyTitle": "No items yet",
+		"emptyDescription": "There are no items to display.",
+		"itemsError": "Unable to load items. Please try again later.",
+		"millionViews": "1M+"
+	},
+	"Errors": {
+		"unexpected": "Something went wrong",
+		"unexpectedWithRetry": "Something went wrong. Please try again.",
+		"rateLimit": "Too many requests. Please try again later.",
+		"retryIn": [
+			{
+				"declarations": ["input seconds", "local secondsPlural = seconds: plural"],
+				"selectors": ["secondsPlural"],
+				"match": {
+					"secondsPlural=one": "Too many requests. Try again in {seconds} second.",
+					"secondsPlural=*": "Too many requests. Try again in {seconds} seconds."
+				}
+			}
+		],
+		"notFound": "Not Found",
+		"methodNotAllowed": "Method Not Allowed",
+		"requestTooLarge": "Payload Too Large"
+	},
+	"Turnstile": {
+		"required": "Please complete the verification and try again.",
+		"loading": "Loading verification...",
+		"unavailable": "Verification is unavailable. Please try again later.",
+		"temporarilyUnavailable": "Verification is temporarily unavailable.",
+		"complete": "Verification complete.",
+		"failed": "Verification failed. Please try again.",
+		"expired": "Verification expired. Please try again.",
+		"timedOut": "Verification timed out. Please try again.",
+		"ready": "Complete the verification to submit.",
+		"loadFailed": "Verification could not load. Please try again.",
+		"retry": "Retry verification",
+		"enableJavaScript": "Enable JavaScript to complete verification and submit this form."
+	},
+	"Validation": {
+		"correctForm": "Please correct the errors in the form before submitting.",
+		"required": "Please fill out this field.",
+		"text": "Enter text in this field.",
+		"number": "Enter a valid number.",
+		"integer": "Enter a whole number.",
+		"value": "Enter a valid value.",
+		"range": "Enter a value within the allowed range.",
+		"email": "Enter a valid email address.",
+		"url": "Enter a valid URL.",
+		"identifier": "Enter a valid identifier.",
+		"date": "Enter a valid date.",
+		"datetime": "Enter a valid date and time.",
+		"time": "Enter a valid time.",
+		"format": "Use the required format for this field.",
+		"option": "Choose a valid option.",
+		"multiple": "Enter a multiple of {divisor}.",
+		"unexpectedFields": "Remove the unexpected fields.",
+		"characterLimit": [
+			{
+				"declarations": ["input limit", "input comparison", "local limitPlural = limit: plural"],
+				"selectors": ["comparison", "limitPlural"],
+				"match": {
+					"comparison=min, limitPlural=one": "Enter at least {limit} character.",
+					"comparison=min, limitPlural=*": "Enter at least {limit} characters.",
+					"comparison=max, limitPlural=one": "Enter no more than {limit} character.",
+					"comparison=max, limitPlural=*": "Enter no more than {limit} characters.",
+					"comparison=exact, limitPlural=one": "Enter exactly {limit} character.",
+					"comparison=exact, limitPlural=*": "Enter exactly {limit} characters.",
+					"comparison=*, limitPlural=one": "Enter exactly {limit}.",
+					"comparison=*, limitPlural=*": "Enter exactly {limit}."
+				}
+			}
+		],
+		"itemLimit": [
+			{
+				"declarations": ["input limit", "input comparison", "local limitPlural = limit: plural"],
+				"selectors": ["comparison", "limitPlural"],
+				"match": {
+					"comparison=min, limitPlural=one": "Provide at least {limit} item.",
+					"comparison=min, limitPlural=*": "Provide at least {limit} items.",
+					"comparison=max, limitPlural=one": "Provide no more than {limit} item.",
+					"comparison=max, limitPlural=*": "Provide no more than {limit} items.",
+					"comparison=exact, limitPlural=one": "Provide exactly {limit} item.",
+					"comparison=exact, limitPlural=*": "Provide exactly {limit} items.",
+					"comparison=*, limitPlural=one": "Enter exactly {limit}.",
+					"comparison=*, limitPlural=*": "Enter exactly {limit}."
+				}
+			}
+		],
+		"fileLimit": [
+			{
+				"declarations": ["input limit", "input comparison", "local limitPlural = limit: plural"],
+				"selectors": ["comparison", "limitPlural"],
+				"match": {
+					"comparison=min, limitPlural=one": "Choose a file with at least {limit} byte.",
+					"comparison=min, limitPlural=*": "Choose a file with at least {limit} bytes.",
+					"comparison=max, limitPlural=one": "Choose a file with no more than {limit} byte.",
+					"comparison=max, limitPlural=*": "Choose a file with no more than {limit} bytes.",
+					"comparison=exact, limitPlural=one": "Choose a file with exactly {limit} byte.",
+					"comparison=exact, limitPlural=*": "Choose a file with exactly {limit} bytes.",
+					"comparison=*, limitPlural=one": "Enter exactly {limit}.",
+					"comparison=*, limitPlural=*": "Enter exactly {limit}."
+				}
+			}
+		],
+		"numberLimit": [
+			{
+				"declarations": ["input limit", "input comparison"],
+				"selectors": ["comparison"],
+				"match": {
+					"comparison=exact": "Enter exactly {limit}.",
+					"comparison=min": "Enter a number at least {limit}.",
+					"comparison=max": "Enter a number no more than {limit}.",
+					"comparison=greater": "Enter a number greater than {limit}.",
+					"comparison=less": "Enter a number less than {limit}.",
+					"comparison=*": "Enter a valid number."
+				}
+			}
+		]
+	},
+	"Header": {
+		"mainNavigation": "Main navigation",
+		"streak": "Streak",
+		"events": "Events",
+		"videos": "Videos",
+		"play": "Play",
+		"collabs": "Collabs",
+		"menu": "Menu",
+		"openMenu": "Open menu",
+		"closeMenu": "Close menu",
+		"follow": "Follow me"
+	},
+	"LanguageSwitcher": {
+		"label": "Language",
+		"menuLabel": "Change language, current: {language}"
+	},
+	"Footer": {
+		"copyright": "© {name}. Streak updated after every match."
+	},
+	"Winstreak": {
+		"carouselLabel": "{count} wins, counted in groups of five"
+	},
+	"EventCountdown": {
+		"liveNow": "Live now.\nCome play.",
+		"timerLabel": "Time until the next event",
+		"nextEventIn": "Next event in",
+		"days": "Days",
+		"hours": "Hrs",
+		"minutes": "Min",
+		"seconds": "Sec"
+	},
+	"HomePage": {
+		"SEO": {
+			"title": "Ogi · King of 1v1 | 1v1 football player",
+			"description": "Ogi, King of 1v1. I play 1v1 football against anyone, anywhere, anytime: street, artificial or natural grass. Find me on my Stories or at my next event.",
+			"eventName": "1v1 football vs Ogi at {place}",
+			"eventDescription": "Free entry. Play Ogi 1v1, first to 3 goals wins.",
+			"eventDescriptionWithPrize": "Free entry. Play Ogi 1v1, first to 3 goals wins. Beat {rivals} and win {prize}."
+		},
+		"HomeHeroSection": {
+			"photoAlt": "Ogi at night, holding the ball",
+			"titleStart": "King of",
+			"titleHighlight": "1V1",
+			"nextEvent": "Next Event",
+			"seeStreak": "See the streak"
+		},
+		"HomeMarqueeSection": {
+			"sponsorsPlaceholder": "Sponsors will go here"
+		},
+		"HomeWinstreakSection": {
+			"winsInARow": "Wins in a row",
+			"highestEver": "Highest ever",
+			"description": "Every 5 wins in a row adds {bump} to the pot. Beat me in a first to 3 and the whole pot is yours. I update the number here after every match, and only here.",
+			"prizeToWinner": "to whoever breaks it",
+			"potStart": "The pot",
+			"potStartsAt": "starts at 5 wins",
+			"nextBump": [
+				{
+					"declarations": ["input count", "input prize", "local countPlural = count: plural"],
+					"selectors": ["countPlural"],
+					"match": {
+						"countPlural=one": "{count} more win and it goes up to {prize}.",
+						"countPlural=*": "{count} more wins and it goes up to {prize}."
+					}
+				}
+			],
+			"howToPlay": "How to play me"
+		},
+		"HomeNextEventSection": {
+			"today": "Today",
+			"tomorrow": "Tomorrow",
+			"time": "{clock}h"
+		},
+		"HomeNextEventSectionContent": {
+			"label": "Next event",
+			"previousLabel": "Previous event"
+		},
+		"HomeNextEventSectionInformation": {
+			"srLabel": "Next event:",
+			"srPreviousLabel": "Previous event:",
+			"ifYouBeatMe": "If you\nbeat me",
+			"ifYouBeat": "If you\nbeat {rivals}",
+			"getDirections": "Get directions"
+		},
+		"HomeNextEventSectionCountdown": {
+			"posterAlt": "Poster for the {day} event at {place}",
+			"ended": "It’s over.\nSee you at the next one."
+		},
+		"HomeNextEventSectionUpcoming": {
+			"title": "Also coming up",
+			"prizeIfYouBeatMe": "{prize} if you beat me",
+			"prizeIfYouBeat": "{prize} if you beat {rivals}",
+			"directions": "Directions"
+		},
+		"HomeNextEventSectionEmpty": {
+			"title": "No events scheduled",
+			"description": "When I play, I post where I am on my Stories. Follow me, come find me and play me 1v1.",
+			"followOn": "Follow on {platform}"
+		},
+		"HomeReelSection": {
+			"title": "Videos",
+			"description": "Watch them on TikTok, Instagram or YouTube."
+		},
+		"HomeReelSectionCarousel": {
+			"label": "Featured videos"
+		},
+		"HomeReelSectionItem": {
+			"label": "Ogi video",
+			"watchOn": "Watch on {platform}",
+			"showVideo": "Show this video"
+		},
+		"HomeReelSectionCarouselControls": {
+			"previous": "Previous video",
+			"next": "Next video",
+			"videoNumber": "Video {number}"
+		},
+		"HomeClosingSection": {
+			"title": "How to play against me",
+			"description": "I play 1v1s anywhere, anytime, against everyone: on the street, artificial grass or natural grass. When I play, I post where I am on my Stories, so follow me to find me. Or check my next event above.",
+			"ruleStart": "First to",
+			"ruleHighlight": "3 goals",
+			"ruleEnd": "wins.",
+			"followOn": "Follow on {platform}",
+			"new": "New"
+		},
+		"HomeContactSectionLeftContent": {
+			"title": "Work with me",
+			"description": "Brand deals, sponsored 1v1s and appearances. My average video has 500K views. Send me a message, or email me directly."
+		},
+		"HomeContactSectionRightContent": {
+			"title": "Shoot your shot"
+		},
+		"HomeContactForm": {
+			"nameLabel": "Name",
+			"namePlaceholder": "Your name or brand",
+			"emailLabel": "Email",
+			"emailPlaceholder": "you@brand.com",
+			"messageLabel": "Message",
+			"messageDescription": "Brand, idea, dates, budget: whatever helps.",
+			"messagePlaceholder": "Hey Ogi, we would love to work with you on...",
+			"sending": "Sending",
+			"send": "Send message",
+			"sent": "Message sent. I'll get back to you soon."
+		}
+	},
+	"ErrorPage": {
+		"notFoundTitle": "Page not found",
+		"notFoundDescription": "The page you are looking for does not exist or has been moved.",
+		"errorTitle": "Something went wrong",
+		"errorDescription": "An unexpected error occurred. Please try again or return to the home page.",
+		"backHome": "Back to home"
+	}
+}
