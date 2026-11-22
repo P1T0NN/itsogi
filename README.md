@@ -37,3 +37,7 @@ In the Worker's **Settings → Variables and Secrets**, add `PUBLIC_ORIGIN` as
 text variables. Add `RESEND_API_KEY` and `TURNSTILE_SECRET_KEY` as secrets.
 These are runtime settings. With the Worker verified, add `itsogi.com` as a
 Custom Domain under **Settings → Domains & Routes**.
+
+Cloudflare Workers Issues groups server failures. PostHog captures browser
+exceptions, page views, and named analytics events when `PUBLIC_POSTHOG_KEY`
+is set.
