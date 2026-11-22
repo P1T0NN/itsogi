@@ -2,15 +2,16 @@
 import { building } from '$app/env';
 import { defineEnvVars } from '@sveltejs/kit/env';
 
+function _requireAtRuntime(value: string | undefined) {
+	const isMissingAtRuntime = !building && !value;
+	if (isMissingAtRuntime) throw new Error('Value is required at runtime');
+	return value;
+}
+
 export const variables = defineEnvVars({
-	RESEND_API_KEY: {
-		schema: (value) => {
-			if (!value && !building) throw new Error('RESEND_API_KEY is not set');
-			return value;
-		}
-	},
-	TURNSTILE_SECRET_KEY: {},
-	PUBLIC_TURNSTILE_KEY: { public: true },
+	RESEND_API_KEY: { schema: _requireAtRuntime },
+	TURNSTILE_SECRET_KEY: { schema: _requireAtRuntime },
+	PUBLIC_TURNSTILE_KEY: { public: true, schema: _requireAtRuntime },
 	PUBLIC_POSTHOG_KEY: {
 		public: true,
 		description:
