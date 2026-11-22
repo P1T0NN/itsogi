@@ -2,9 +2,11 @@ import '@/shared/features/errors/config';
 
 // SVELTEKIT IMPORTS
 import { dev } from '$app/env';
+import { PUBLIC_POSTHOG_KEY } from '$app/env/public';
 import { sequence } from '@sveltejs/kit/hooks';
 
 // LIBRARIES
+import { PostHog } from 'posthog-node';
 import { m } from '@/lib/paraglide/messages';
 import { paraglideMiddleware } from '@/lib/paraglide/server';
 import { baseLocale, getLocale, getTextDirection } from '@/lib/paraglide/runtime';
@@ -12,8 +14,20 @@ import { baseLocale, getLocale, getTextDirection } from '@/lib/paraglide/runtime
 // UTILS
 import { formatFrameworkError } from '@/shared/features/errors/utils/formatFrameworkError';
 
+// CONFIG
+import { POSTHOG_CONFIG } from '@/features/analytics/config';
+
 // TYPES
 import type { Handle, HandleServerError } from '@sveltejs/kit/hooks';
+
+const posthog = PUBLIC_POSTHOG_KEY
+	? new PostHog(PUBLIC_POSTHOG_KEY, {
+			host: POSTHOG_CONFIG.API_HOST,
+			// Send before returning the response so the runtime keeps the request alive.
+			requestTimeout: 1500,
+			captureMaxRetries: 0
+		})
+	: undefined;
 
 const securityHandle: Handle = async ({ event, resolve }) => {
 	const response = await resolve(event);
@@ -77,8 +91,27 @@ const paraglideHandle: Handle = ({ event, resolve }) =>
 		{ effectiveRequestUrl: event.isRemoteRequest ? event.url : undefined }
 	);
 
-export const handleError: HandleServerError = (input) => {
-	const { kind, error, issues } = input;
+export const handleError: HandleServerError = async (input) => {
+	const { kind, error, event, issues } = input;
+	const isAppFailure = kind === 'app' && error.status >= 500;
+	const shouldReport = kind === 'unknown' || isAppFailure;
+
+	if (kind === 'unknown') console.error(error);
+
+	if (shouldReport) {
+		const exception = isAppFailure ? new Error(error.message) : error;
+		try {
+			await posthog?.captureExceptionImmediate(exception, {
+				properties: {
+					source: 'server',
+					route: event.route.id,
+					status_code: isAppFailure ? error.status : 500
+				}
+			});
+		} catch (cause) {
+			console.error('Failed to report server exception to PostHog', cause);
+		}
+	}
 
 	if (kind === 'validation') {
 		console.error(issues);
@@ -86,7 +119,6 @@ export const handleError: HandleServerError = (input) => {
 	}
 
 	if (kind === 'unknown') {
-		console.error(error);
 		return { message: m['Errors.unexpected']() };
 	}
 

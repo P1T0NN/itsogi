@@ -8,11 +8,11 @@ import posthog from 'posthog-js';
 import { m } from '@/lib/paraglide/messages';
 import { getLocale } from '@/lib/paraglide/runtime';
 
-// UTILS
-import { formatFrameworkError } from '@/shared/features/errors/utils/formatFrameworkError';
-
 // CONFIG
 import { POSTHOG_CONFIG } from '@/features/analytics/config';
+
+// UTILS
+import { formatFrameworkError } from '@/shared/features/errors/utils/formatFrameworkError';
 
 // TYPES
 import type { ClientInit, HandleClientError } from '@sveltejs/kit/hooks';
@@ -30,14 +30,17 @@ export const init: ClientInit = () => {
 		person_profiles: 'never',
 		// SvelteKit navigates without full reloads, so count page views on route changes too.
 		capture_pageview: 'history_change',
-		// Free tier: only page views and the named events from trackEvent. Every automatic
-		// capture below would add events on each visit.
+		// Keep interaction analytics limited to named events, with separate exception capture.
 		autocapture: false,
 		capture_pageleave: false,
 		capture_dead_clicks: false,
 		capture_heatmaps: false,
 		capture_performance: false,
-		capture_exceptions: false,
+		capture_exceptions: {
+			capture_unhandled_errors: true,
+			capture_unhandled_rejections: true,
+			capture_console_errors: false
+		},
 		rageclick: false,
 		disable_surveys: true,
 		disable_session_recording: true
@@ -47,6 +50,7 @@ export const init: ClientInit = () => {
 export const handleError: HandleClientError = ({ kind, error }) => {
 	if (kind === 'unknown') {
 		console.error(error);
+		if (posthog.__loaded) posthog.captureException(error);
 		return { message: m['Errors.unexpected']() };
 	}
 

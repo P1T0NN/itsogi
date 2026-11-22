@@ -22,5 +22,18 @@ Read [Turnstile forms](docs/TurnstileForms.md) and [time utilities](src/docs/Tim
 for the retained feature conventions. Edit translations under `messages/`;
 `src/lib/paraglide/` is generated.
 
-`bun run build` selects the Node adapter locally and the Vercel adapter when
-`VERCEL=1`. No hosting or provider credentials are needed merely to install.
+## Deploy to Cloudflare Workers
+
+`bun run build` builds the Worker and its static assets. Use `bun run preview`
+to run the production build locally through Wrangler. Wrangler reads local
+settings from `.env` or `.dev.vars`.
+
+The Worker is named `itsogi` in `wrangler.jsonc`. For a Git-connected Worker,
+set the deploy command to `bun run deploy` and leave the separate build command
+blank, since the deploy script already builds the app.
+
+In the Worker's **Settings → Variables and Secrets**, add `PUBLIC_ORIGIN` as
+`https://itsogi.com` and set `PUBLIC_TURNSTILE_KEY` and `PUBLIC_POSTHOG_KEY` as
+text variables. Add `RESEND_API_KEY` and `TURNSTILE_SECRET_KEY` as secrets.
+These are runtime settings. With the Worker verified, add `itsogi.com` as a
+Custom Domain under **Settings → Domains & Routes**.

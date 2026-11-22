@@ -2,13 +2,9 @@ import { paraglideVitePlugin } from '@inlang/paraglide-js';
 import { enhancedImages } from '@sveltejs/enhanced-img';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vitest/config';
-import nodeAdapter from '@sveltejs/adapter-node';
-import vercelAdapter from '@sveltejs/adapter-vercel';
+import cloudflareAdapter from '@sveltejs/adapter-cloudflare';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { fileURLToPath } from 'node:url';
-
-// Vercel sets this during its build; local/VPS builds keep the standalone Node server.
-const isVercel = process.env.VERCEL === '1';
 
 export default defineConfig({
 	resolve: {
@@ -62,7 +58,7 @@ export default defineConfig({
 				}
 			},
 
-			adapter: isVercel ? vercelAdapter({ runtime: 'nodejs24.x', maxDuration: 60 }) : nodeAdapter()
+			adapter: cloudflareAdapter()
 		})
 	],
 	test: {

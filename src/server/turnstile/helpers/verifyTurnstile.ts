@@ -17,7 +17,10 @@ export async function verifyTurnstile(
 	token: string,
 	action: string,
 	hostname: string,
-	dependencies: VerificationDependencies = { secret: TURNSTILE_SECRET_KEY, fetch: globalThis.fetch }
+	dependencies: VerificationDependencies = {
+		secret: TURNSTILE_SECRET_KEY,
+		fetch: globalThis.fetch.bind(globalThis)
+	}
 ) {
 	if (!dependencies.secret) error(503, m['Turnstile.temporarilyUnavailable']());
 
