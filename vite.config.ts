@@ -59,7 +59,20 @@ export default defineConfig({
 			},
 
 			adapter: cloudflareAdapter()
-		})
+		}),
+		{
+			name: 'dev-ssr-request-store',
+			apply: 'serve',
+			configEnvironment(name) {
+				if (name !== 'ssr') return;
+
+				// Apply after the Cloudflare adapter sets its SSR optimization defaults.
+				return {
+					resolve: { external: ['@sveltejs/kit/internal/server'] },
+					optimizeDeps: { noDiscovery: true, include: ['posthog-js', 'resend'] }
+				};
+			}
+		}
 	],
 	test: {
 		expect: { requireAssertions: true },

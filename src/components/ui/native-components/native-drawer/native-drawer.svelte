@@ -150,8 +150,6 @@
 
 <style>
 	.drawer {
-		/* Capped on big screens; on phones a strip of the page stays visible to tap outside. */
-		--drawer-width: min(24rem, 86dvw, 100dvw - 3rem);
 		--drawer-backdrop: 0;
 
 		/* Reset the UA dialog box so the swipe surface covers the whole viewport. */
@@ -175,7 +173,8 @@
 	/* Closed stop on the left (empty spacer), open stop on the right (the panel). */
 	.drawer-scroller {
 		display: grid;
-		grid-template-columns: 100% var(--drawer-width);
+		grid-template-columns: repeat(2, 100%);
+		grid-template-rows: 100%;
 		height: 100%;
 		overflow-x: scroll;
 		overscroll-behavior: none;
@@ -197,8 +196,6 @@
 	}
 
 	.drawer-panel {
-		/* svh, not dvh: the panel must not jump while the mobile address bar resizes mid-swipe. */
-		height: 100svh;
 		overflow-y: auto;
 		overscroll-behavior: contain;
 		scroll-snap-align: end;

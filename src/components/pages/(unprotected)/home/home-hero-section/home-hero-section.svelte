@@ -21,8 +21,8 @@
 		sizes={HERO_PHOTO.sizes}
 		alt={m['HomePage.HomeHeroSection.photoAlt']()}
 		fetchpriority="high"
-		class="absolute inset-0 -z-20 size-full object-cover md:left-auto md:w-3/5 md:mask-l-from-50%"
-		style:object-position={HERO_PHOTO.focus}
+		class="hero-photo absolute inset-0 -z-20 size-full object-cover md:left-auto md:w-3/5 md:mask-l-from-50%"
+		style:--hero-photo-focus={HERO_PHOTO.focus}
 	/>
 	<!-- Phones: dim the photo and fade it out at the bottom. Desktop: fade into black from the left. -->
 	<div
@@ -35,7 +35,7 @@
 	></div>
 
 	<div
-		class="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-4 pt-28 pb-72 text-center sm:px-6 lg:px-10"
+		class="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-4 pt-36 pb-48 text-center sm:px-6 md:pt-28 md:pb-72 lg:px-10"
 	>
 		<Crown class="mb-3 w-20 sm:w-24 lg:w-28" />
 		<StaticImage
@@ -73,3 +73,16 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	.hero-photo {
+		object-position: var(--hero-photo-focus);
+	}
+
+	@media (width < 48rem) {
+		.hero-photo {
+			/* Stop shifting once the photo reaches the left edge. */
+			object-position: min(0px, 50% + 24vw) 85%;
+		}
+	}
+</style>

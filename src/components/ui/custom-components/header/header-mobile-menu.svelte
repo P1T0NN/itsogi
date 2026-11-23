@@ -33,13 +33,12 @@
 	triggerLabel={m['Header.openMenu']()}
 	triggerIcon="icon-[lucide--menu]"
 	triggerClass="flex size-11 items-center justify-center rounded-full ring-1 ring-foreground/15 transition-colors hover:bg-foreground/10 hover:text-primary"
-	class="border-l border-border"
 >
 	{#snippet children({ close, closeNow })}
 		<div class="flex min-h-full flex-col px-6 pt-4 pb-8">
 			<div class="flex min-h-16 items-center justify-between">
 				<Logo showText={false} imageClass="size-10" />
-				<!-- svelte-ignore a11y_autofocus: the dialog moves focus here on open, as a modal should. -->
+				<!-- svelte-ignore a11y_autofocus (The dialog moves focus to the close button on open.) -->
 				<button
 					type="button"
 					autofocus
